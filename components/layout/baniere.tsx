@@ -1,10 +1,16 @@
 "use client";
 import React, { useEffect, useState }  from "react";
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Github, Linkedin } from 'lucide-react';
+import { useTheme } from "next-themes";
+import {ToggleTheme} from "@/components/common";
+
 
 
 
 const Baniere: React.FC = () => {
+
+  const { theme, setTheme } = useTheme();
 
   const [ activeAnimationLine, setActiveAnimationLine ] = useState<Number | null>(null);
   const [ activeAnimationPlace, setActiveAnimationPlace ] = useState<Number | null>(null);
@@ -38,15 +44,15 @@ const Baniere: React.FC = () => {
         const carres: JSX.Element[] = [];
         for (let i:number = 0; i < nbr ; i++) {
           carres.push(
-            <div key={`${line}-${i}`} id={`${line}-carre-${i}`} className="random-animation-element group border-2 hover:border-4 border-pink-600 rotate-45 h-32 w-32 flex justify-center items-center animate-slideInFromLeft animate-trail">
-              <div className={`border-2 border-pink-600 h-28 w-28 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear01' : 'opacity-0'}`}>
-                <div className={`border-2 border-pink-500 h-24 w-24 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear02' : 'opacity-0'}`}>
-                  <div className={`border-2 border-pink-500 h-20 w-20 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear03' : 'opacity-0'}`}>
-                    <div className={`border-2 border-pink-400 h-16 w-16 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear04' : 'opacity-0'}`}>
-                      <div className={`border-2 border-pink-300 h-12 w-12 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear05' : 'opacity-0'}`}>
-                        <div className={`border-2 border-pink-200 h-8 w-8 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear06' : 'opacity-0'}`}>
-                          <div className={`border-2 border-pink-100 h-4 w-4 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear07' : 'opacity-0'}`}>
-                            <div className={`border-2 border-pink-50 h-2 w-2 relative animate-appear08::after ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear08' : 'opacity-0'}`}>
+            <div key={`${line}-${i}`} id={`${line}-carre-${i}`} className="size-24 lg:size-32 random-animation-element group border-2 hover:border-4 border-pink-600 rotate-45  flex justify-center items-center animate-slideInFromLeft animate-trail">
+              <div className={`border-2 border-pink-600  size-24 lg:size-28 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear01' : 'opacity-0'}`}>
+                <div className={`border-2 border-pink-500 size-20 lg:size-24 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear02' : 'opacity-0'}`}>
+                  <div className={`border-2 border-pink-500 size-20 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear03' : 'opacity-0'}`}>
+                    <div className={`border-2 border-pink-400 size-16 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear04' : 'opacity-0'}`}>
+                      <div className={`border-2 border-pink-300 size-12 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear05' : 'opacity-0'}`}>
+                        <div className={`border-2 border-pink-200 size-8 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear06' : 'opacity-0'}`}>
+                          <div className={`border-2 border-pink-100 size-4 relative flex justify-center items-center ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear07' : 'opacity-0'}`}>
+                            <div className={`border-2 border-pink-50 size-2 relative animate-appear08::after ${line === activeAnimationLine && i === activeAnimationPlace ? 'opacity-100 animate-appear08' : 'opacity-0'}`}>
                             </div>
                           </div>
                         </div>
@@ -79,21 +85,26 @@ const Baniere: React.FC = () => {
 
 
     return (
-      <div className="w-full"> 
-        <section className="flex justify-between items-center w-full xl:px-32 lg:px-24 md:px-12 px-4  pt-16 pb-32 ">
-          <div className="">
-            <div className="flex justify-center ">
-                {grosCarre(2, 1)}
-            </div>
-            <div className="flex justify-center "> 
-                {grosCarre(3, 2)}
-            </div>
-            <div className="flex justify-center ">
-                {grosCarre(2, 3)}
+      <div className="w-full mb-32 border border-blue-900"> 
+        <section className="flex flex-col md:flex-row md:justify-between md:items-center w-full xl:px-32 lg:px-24 md:px-12 px-4  pt-4 lg:pt-16 pb-32 ">
+          <div className="flex mt-2 ml-2">
+            <div className="flex flex-col ">
+              <div className="flex justify-center ">
+                  {grosCarre(2, 1)}
+              </div>
+              <div className="flex justify-center "> 
+                  {grosCarre(3, 2)}
+              </div>
+              <div className="flex justify-center ">
+                  {grosCarre(2, 3)}
+              </div>
             </div>
           </div>
-          <div className="group flex flex-col justify-center  mr-20"> 
-            <div className=" mr-6">
+          
+
+          <div className=" flex flex-col-reverse -mt-40 sm:-mt-72 md:mt-0 md:flex-col justify-center md:mr-20"> 
+            
+            <div id="name"className="group mr-6 p-4">
               <p className=" text-small-caps text-right  text-pink-600 text-7xl tracking-widest cursor-default ">
                 {animationName("Nathalie", "prenom", 0)}
               </p>
@@ -101,7 +112,31 @@ const Baniere: React.FC = () => {
                 {animationName("Sartor", "nom", 0.15)}
               </p>
             </div> 
-            <div className="mr-52 -mt-20  felx justify-start">
+
+            <div id="contact" className="flex justify-end p-2 mr-10 ">
+              <a  
+                href="https://github.com/nat0490"
+                className="hover:cursor-pointer hover:bg-pink-600/40 animate-bounce bg-pink-600/5 rounded-full p-2 mr-1"
+                target="_blank" 
+                rel="noopener noreferrer"
+              > <Github color={`${theme === 'dark' ? "#fff" : "#000" }`} className="mt-1.5 ml-1"/>
+                {/* <MousePointerClick color={`${theme === 'dark' ? "#fff" : "#000" }`}       className="mt-1.5 ml-1"/>  */}
+              </a>   
+
+              <a  
+                  href="https://www.linkedin.com/in/nathalie-sartor-5aa677189/ "
+                  className="hover:cursor-pointer hover:bg-pink-600/40 animate-bounce bg-pink-600/5 rounded-full p-2 mr-1"
+                  style={{ animationDelay: "0.5s" }}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+              > <Linkedin color={`${theme === 'dark' ? "#fff" : "#000" }`} className="mt-1.5 ml-1" />              
+              </a>         
+            </div>
+            
+        
+
+
+            <div className=" md:mr-52 md:-mt-20 flex justify-end md:justify-start">
               <Player
                 autoplay
                 loop
@@ -111,9 +146,17 @@ const Baniere: React.FC = () => {
                 style={{ height: '250px', width: '250px' }}
               >
               </Player>
+              
+              
             </div>
+            
           </div>
+          
         </section>
+        <ToggleTheme />
+
+
+       
 
         {/* <section className="flex w-full ">
           <div className="w-6/12 border-b rotate-12 rounded-b-full h-80">bla</div>

@@ -17,10 +17,10 @@ export default function Home() {
   
   
       <Baniere />
-      <ToggleTheme />
+      {/* <ToggleTheme /> */}
       {/* <Menu/> */}
 
-      <Skills />
+      <Realisations />
 
       <AboutMe />
 
@@ -35,15 +35,7 @@ export default function Home() {
               >
               </Player>
 
-              <Player
-                autoplay
-                loop
-                // speed={0.8}
-                // hover={true}
-                src={require("@/assets/AnimationBubble2.json")}
-                style={{ height: '250px', width: '250px' }}
-              >
-              </Player>
+              
 
               <Player
                 autoplay

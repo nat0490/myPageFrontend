@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
 
     return (
         <section className="w-11/12 mb-32">
-            <h1 className="text-pink-600 text-small-caps text-right text-5xl mb-6 "> Contact Me</h1>
+            <h1 className="text-pink-600 text-small-caps text-right text-5xl mb-6 ">Contact</h1>
             <div className=" h-72 mb-36  rounded-3xl contactBox ">
                 <div className="pb-32"> 
                     <form ref={form} onSubmit={handleSubmit} className="flex justify-center w-full">
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                             <div className="flex flex-col items-center mt-5">
                                 <button 
                                     type="submit" 
-                                    className="border-2 border-pink-600 rounded-3xl p-2 sm:w-2/3"
+                                    className="border-2 border-pink-600 hover:bg-pink-600/40 rounded-3xl p-2 sm:w-2/3"
                                     >
                                     Envoyer
                                 </button>
