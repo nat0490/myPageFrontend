@@ -119,8 +119,7 @@ const Baniere: React.FC = () => {
                 className="hover:cursor-pointer hover:bg-pink-600/40 animate-bounce bg-pink-600/5 rounded-full p-2 mr-1"
                 target="_blank" 
                 rel="noopener noreferrer"
-              > <Github color={`${theme === 'dark' ? "#fff" : "#000" }`} className="mt-1.5 ml-1"/>
-                {/* <MousePointerClick color={`${theme === 'dark' ? "#fff" : "#000" }`}       className="mt-1.5 ml-1"/>  */}
+              > { theme === "light" ?  <Github color="black" className="mt-1.5 ml-1"/> : <Github color="white" className="mt-1.5 ml-1"/> }
               </a>   
 
               <a  
@@ -129,9 +128,12 @@ const Baniere: React.FC = () => {
                   style={{ animationDelay: "0.5s" }}
                   target="_blank" 
                   rel="noopener noreferrer"
-              > <Linkedin color={`${theme === 'dark' ? "#fff" : "#000" }`} className="mt-1.5 ml-1" />              
+              > { theme === "light" ?  <Linkedin color="black" className="mt-1.5 ml-1"/> : <Linkedin color="white" className="mt-1.5 ml-1"/> }
+                        
               </a>         
             </div>
+
+            <ToggleTheme />
             
         
 
@@ -153,7 +155,6 @@ const Baniere: React.FC = () => {
           </div>
           
         </section>
-        <ToggleTheme />
 
 
        

@@ -72,6 +72,38 @@ const myRealisations: Item[] = [
             "https://github.com/nat0490/Chefs-Backend"
         ]
     },
+    // {
+    //     id: 3,
+    //     name: "Chef's Liberation",
+    //     description: "App Mobile permettant de voir les chef à proximitré de chez soi ou de les choisirs via leur plat. Une fois un plat choisis, on viens choisir la date de la prestation (quand le chef viendra cuisiner chez soi). On peux venir modifier ces information utilisateur via son profil. Egalement la possibilité de passer chef et de pouvoir proposer ces plats",
+    //     image: [
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797186/Mes%20r%C3%A9alisations/Acceuil_pour_connexion_nstmqm.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797187/Mes%20r%C3%A9alisations/page_SignIn_pp3lip.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797193/Mes%20r%C3%A9alisations/SignUp_coordonnees_l8xaq9.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797212/Mes%20r%C3%A9alisations/Commande_adresseSelect_cmriko.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797213/Mes%20r%C3%A9alisations/Commande_agenda_Dateselect_y7aiwo.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797217/Mes%20r%C3%A9alisations/Commande_fin_btcm2u.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797220/Mes%20r%C3%A9alisations/Commande_paiementSelect_roxhwe.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797225/Mes%20r%C3%A9alisations/Page_Main_apres_connexion_bynbao.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797232/Mes%20r%C3%A9alisations/Page_plat_details_mlhmp8.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797237/Mes%20r%C3%A9alisations/Profil_chef_sa62cf.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797247/Mes%20r%C3%A9alisations/ajouter_recette_dgyjd6.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797294/Mes%20r%C3%A9alisations/Historique_commandes_iklyjc.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797294/Mes%20r%C3%A9alisations/Profil_du_chef_plat_wdfj2s.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797303/Mes%20r%C3%A9alisations/Profil_du_chef_dfnwv9.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797304/Mes%20r%C3%A9alisations/Setting_sansChef_on6coa.jpg",
+    //         "https://res.cloudinary.com/dawkemcl5/image/upload/v1720797320/Mes%20r%C3%A9alisations/userProfil_ko1wio.jpg",
+            
+    //     ],
+    //     tech: ["NodeJS", "ExpressJS", "MongoDB", "Cloudinary", "ReactNative", "Vercel", "Redux", "Bcrypt", "Dotenv", "Uid2", "Expo"],
+    //     video: ["https://res.cloudinary.com/dawkemcl5/video/upload/v1720798232/Mes%20r%C3%A9alisations/Video_App_q8jgfh.mp4"],
+    //     link: [""],
+    //     linkGitHub: [
+    //         "https://github.com/nat0490/Chefs-Frontend", 
+    //         "https://github.com/nat0490/Chefs-Backend"
+    //     ]
+    // },
+
 
 
 ];
