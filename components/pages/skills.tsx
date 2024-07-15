@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { PulseLoader } from 'react-spinners';
+import { PulseLoader, PacmanLoader } from 'react-spinners';
 
 const Skills: React.FC = () => {
     const { theme, setTheme } = useTheme();
@@ -135,11 +135,7 @@ const Skills: React.FC = () => {
             const scrollWidth = scrollElement.scrollWidth - scrollElement.clientWidth;
             scrollElement.scrollTo({ left: scrollWidth, behavior: 'smooth' });
         }
-    };
-
- 
-
-    if (!mounted) return <PulseLoader color="#db2777"/>;
+    };  
 
     const skills = () => {
         const mySkills: JSX.Element[] = [];
@@ -158,12 +154,14 @@ const Skills: React.FC = () => {
             )
         }
         return mySkills;
-    };   
+    };  
+    
+    if (!mounted) return <PacmanLoader color="#db2777"/>;
 
     return (
         <section className="w-full">
             <h1 className="text-pink-600 text-small-caps text-5xl mb-6 ml-8"> Skills </h1>
-            <div className=" h-98 mb-36 flex items-center overflow-hidden">
+            <div className=" h-98 mb-4 flex items-center overflow-hidden">
                 <div className="flex flex-col w-full">
                     <div id="scrollSkills" ref={scrollContainerRef} className="flex items-center overflow-hidden">
                         {skills()}

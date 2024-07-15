@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState} from "react";
 import myRealisations from "@/data/realisations";
 import Image from "next/image";
-import { PulseLoader } from 'react-spinners';
+import { PulseLoader, PacmanLoader } from 'react-spinners';
 import { Link, MousePointerClick,Cog } from 'lucide-react';
 import { useTheme } from "next-themes";
 
@@ -151,7 +151,7 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-150"
-                        priority={i === 0}
+                        // priority={i === 0}
                     />
                 </div>
             )
@@ -177,21 +177,23 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
             const displayText = isTruncated ? fullText.substring(0, 150) : fullText; 
 
             allRealisations.push(
-                <div key={`${realisation.id}`} className={` flex flex-col w-full md:w-1/2 ${allRealisations.length >= 3 && "xl:w-1/3"} `}>
-                    <div className="rounded-xl bg-pink-700/5 p-2">
+                <div key={`${realisation.id}`} className={` flex flex-col w-full md:w-1/2  ${allRealisations.length >= 3 && "xl:w-1/3"} `}>
+                    {/* ${allRealisations.length >= 3 && "xl:w-1/3"}  */}
+                    <div className="rounded-xl h-full bg-pink-700/5 p-2">
                     <h2 className="text-small-caps text-center text-xl m-2 bg-pink-600/10 rounded-lg">
                         {realisation.name}
                     </h2>
 
                     <div className="flex flex-col  h-72  lg:h-80 xl:h-96 " >
                         {/* <div className="flex flex-col h-72 md:h-48 lg:h-64 xl:h-56 2xl:h-72"> */}
-                            <div id="GrandeImage" className="relative h-full">
+                            <div id="GrandeImage" className="relative h-full w-full">
                                 <Image
                                     src={mainImage}
                                     alt={`Image principale ${i}`}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="absolute inset-0 object-contain w-full h-full "
+                                    priority
                                 />
                             </div>
                         {/* </div> */}
@@ -216,7 +218,7 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
                     >
                         <p id="description" className="text-center ">
                             {displayText}{isTruncated && fullText.length > 150 && <span className="group-hover:font-bold group-hover:animate-ping ">... </span>   }
-                            {/* <MousePointerClick color={`${theme === 'dark' ? "#fff" : "#000" }`} className="mt-1.5 ml-1 hidden group-hover:flex"/>  */}
+                            
                         </p>
                     </div>
                     <div id="tech" className={`flex flex-col items-center border p-0.5 rounded-lg ${theme === 'dark' ? " border-pink-100/10" : " border-pink-800/10" }`}>
@@ -247,13 +249,13 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
         return allRealisations;
     };
 
-    if (!mounted) return <PulseLoader color="#db2777"/>;
+    if (!mounted) return <PacmanLoader color="#db2777"/>;
 
     return (
         <section className="w-full">
             <h1 className="text-pink-600 text-small-caps text-center text-5xl mb-6 "> Réalisations </h1>
-            <div className="border-y  border-blue-900 mb-36">
-                <div className="flex flex-nowrap justify-center overflow-x-auto space-x-4 mx-2">
+            <div className="mb-4">
+                <div className="w-full flex flex-nowrap overflow-x-auto justify-center  space-x-3">
 
                     {realisations()}
                     

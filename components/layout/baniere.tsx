@@ -85,7 +85,7 @@ const Baniere: React.FC = () => {
 
 
     return (
-      <div className="w-full mb-32 border border-blue-900"> 
+      <div className="w-full mb-4 "> 
         <section className="flex flex-col md:flex-row md:justify-between md:items-center w-full xl:px-32 lg:px-24 md:px-12 px-4  pt-4 lg:pt-16 pb-32 ">
           <div className="flex mt-2 ml-2">
             <div className="flex flex-col ">
@@ -133,36 +133,18 @@ const Baniere: React.FC = () => {
               </a>         
             </div>
 
-            <ToggleTheme />
-            
-        
-
+            <ToggleTheme /> 
 
             <div className=" md:mr-52 md:-mt-20 flex justify-end md:justify-start">
               <Player
                 autoplay
-                loop
-                // speed={0.8}
-                // hover={true}
+                loop       
                 src={require("@/assets/AnimationSmile.json")}
                 style={{ height: '250px', width: '250px' }}
-              >
-              </Player>
-              
-              
-            </div>
-            
-          </div>
-          
+              ></Player>                     
+            </div>            
+          </div>          
         </section>
-
-
-       
-
-        {/* <section className="flex w-full ">
-          <div className="w-6/12 border-b rotate-12 rounded-b-full h-80">bla</div>
-          <div className="w-6/12 border-t rounded-t-full h-60">bla</div>
-        </section> */}
       </div>
     );
 };

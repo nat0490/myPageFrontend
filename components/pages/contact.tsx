@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
     return (
         <section className="w-11/12 mb-32">
             <h1 className="text-pink-600 text-small-caps text-right text-5xl mb-6 ">Contact</h1>
-            <div className=" h-72 mb-36  rounded-3xl contactBox ">
+            <div className=" h-72 mb-10  rounded-3xl contactBox ">
                 <div className="pb-32"> 
                     <form ref={form} onSubmit={handleSubmit} className="flex justify-center w-full">
                         <div className="flex flex-col items-center justify-center w-1/5   ">
