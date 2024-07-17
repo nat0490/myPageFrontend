@@ -1,6 +1,7 @@
 type Item = {
     id: number,
     nom: string,
+    postes:string[],
     date: 
         {debut: string,
         fin: string,}
@@ -8,7 +9,8 @@ type Item = {
     type: string,
 //etude / diplome / travail / naissance / look
     description: string,
-    skills: string[],
+    softSkills: string[],
+    competences:string[],
     lieu: string,
     image: string,
 }
@@ -17,121 +19,130 @@ type Item = {
 const monParcours: Item[] = [
     {
         id: 1,
-        nom: "Naissance",
-        date: 
-            {debut: "03/04/1990",
-            fin: "03/04/1990",}
-        ,    
-        type: "naissance",
-    //etude / diplome / autre
-        description: "Arrivée à 7h10.",
-        skills:[""],
-        lieu: "Villeurbanne, 69100",
-        image: "string",
-    },
-    {
-        id: 2,
-        nom: "Primaire",
-        date: 
-            {debut: "1993",
-            fin: "2000",}
-        ,    
-        type:"etude",
-        description: "Fait marquant: a sauté le CM1.",
-        skills:["curiosité"],
-        lieu:"Meyzieu, 69330",
-        image: "string",
-    },
-    {
-        id: 3,
-        nom: "Collège",
-        date: 
-            {debut: "2000",
-            fin: "2004",}
-        ,    
-        type:"etude",
-        description: "",
-        skills:[""],
-        lieu:"Meyzieu, 69330",
-        image: "string",
-    },
-    {
-        id: 4,
         nom: "Lycée",
+        postes:["Bac S"],
         date: 
             {debut: "2004",
             fin: "2007",}
         ,    
         type:"diplome",
-        description: "Passionné par les Math, la physique et les sciences de l'ingénieur. Je n'ai pas pris cette option car un prof nous avait dit \"Attention, c'est 8h par semaines cette matière\". J'obtient mon Bac S grace à mes matières de prédilection.",
-        skills:["Bac S"],
+        // description: "Passionné par les Math, la physique et les sciences de l'ingénieur. Je n'ai pas pris cette option car un prof nous avait dit \"Attention, c'est 8h par semaines cette matière\". J'obtient mon Bac S grace à mes matières de prédilection.",
+        // description: "Appétence pour les Maths et la Physique.",
+        description:"",
+        softSkills:[""],
+        competences:[""],
         lieu:"Decines, 69150",
         image: "string",
     },
+
     {
-        id: 5,
+        id: 2,
         nom: "Universitée",
+        postes:["Economie gestion"],
         date: 
             {debut: "2007",
             fin: "2009",}
         ,    
         type:"etude",
-        description: "La découverte de la vie en université. Partie en économie gestion, je n'ai validé que la majeure du premier semestre. J'ai voulu me réorienter par la suite sur une Licence Maths Info à l'Universitée Lyon 1.",
-        skills:[""],
+        // description: "La découverte de la vie en université. Partie en économie gestion, je n'ai validé que la majeure du premier semestre. J'ai voulu me réorienter par la suite sur une Licence Maths Info à l'Universitée Lyon 1.",
+        description: "",
+        softSkills:[""],
+        competences:[""],
         lieu:"Universitée Jean Moulin Lyon 3",
         image: "string",
     },
     {
-        id: 6,
+        id: 3,
         nom: "Mc Donald's",
+        postes:["Equipière polyvalente","Manageure","Directrice adjointe"],
         date: 
-            {debut: "10/2009",
-            fin: "09/2019",}
+            {debut: "Octobre 2009",
+            fin: "Septembre 2019",}
         ,    
         type:"travail",
-        description: "Fait marquant: Comprendre d'où venait le problème pour ne pas rappeler le support quand il se représentait. J'adorais gerer plusieurs choses, apprendre, comprendre et que tout s'emboite parfaitement. A la base c'était temporaire, avant de reprendre mes études. Et puis ça a duré 10 ans. J'ai évolué progressivement jusqu'à directrice adjointe. J'ai également été directrice pendant 6 mois sur un restaurant 24/24 et ça a été une période compliqué. Faisant partie d'une franchise, j'ai fait presque une dizaine de restaurants.",
-        skills:["Rigueur", "Organisation", "Autonomie", "Détermination","Consciencieuse", "Polyvalence", "travail d'équipe"],
+        description: "Management des équipes, gestion plannings/commandes, respect des normes et procédures, gestion des priorités, satisfaction clients.",
+        softSkills:[
+            "Adaptabilité",
+            "Autonomie", 
+            "Communication", 
+            "Curiosité", 
+            "Flexibilité",
+            "Gestion du temps",
+            "Leadership", 
+            "Organisation", 
+            "Persévérance",
+            "Travail en équipe",
+           ],
+        competences:[""],
         lieu:"Lyon Est",
         image: "string",
     },
     {
-        id: 7,
+        id: 4,
         nom: "Geodis",
+        postes:["Cheffe d'équipe","Responsable d'activité"],
         date: 
-            {debut: "10/2019",
-            fin: "08/2023",}
+            {debut: "Octobre 2019",
+            fin: "Août 2023",}
         ,    
         type:"travail",
-        description: "Fait marquant: On m'a souvent dit que j'étais forte techniquement, surement parce que ça m'interesse énormément. Les tâches variées, l'apprentissage, la polyvalence et le rythme étaient des choses stimulantes. J'ai évolué de chef d'équipe à responsable d'activité sur la partie préparation-expédition de commandes. ",
-        skills:["Analyse", "Organisation", "Autonomie", "Consciencieuse", "Polyvalence", "travail d'équipe"],
+        description: "Sur la partie Préparation & Expedition de commandes: Gestion de l'activité & Analyse des perfomances, management des équipes (CE, Manutentionnaires, Préparateurs de commande), gestion plannings/recrutements, respect des normes et procédures, gestion des priorités et atteindre les objectifs.",
+        softSkills:[
+            "Adaptabilité",
+            "Autonomie", 
+            "Communication", 
+            "Curiosité", 
+            "Flexibilité",
+            "Gestion du temps",
+            "Leadership", 
+            "Organisation", 
+            "Persévérance",
+            "Travail en équipe",
+           ],
+        competences:[""],
         lieu:"Satolas et bonce, 39290",
         image: "string",
     },
     {
-        id: 8,
-        nom: "Immersion Professionnelle - Everial",
+        id: 5,
+        nom: "Everial, R&D",
+        postes:["Immersion Professionnelle"],
         date: 
-            {debut: "04/2023",
-            fin: "04/2023",}
+            {debut: "Avril 2023",
+            fin: "Avril 2023",}
         ,    
         type:"look",
-        description: "Objectif: découvrir la travail d'un développeur en entreprise sur une semaine pour vérifier si la réalité correspondait à l'idée que je m'en faisait avant d'entamer une reconversion professionnelle.",
-        skills:["curiosité"],
+        description: "Découverte du métier de Développeur en entreprise pour confirmer mon choix de reconversion.",
+        softSkills:["Curiosité"],
+        competences:[""],
         lieu:"Technolac, 73770",
         image: "string",
     },
     {
-        id: 9,
-        nom: "RNCP6 Concepteur développeur d'applications Web & Mobile",
+        id: 6,
+        nom: "Titre RNCP6",
+        postes:["Concepteur-développeur d'applications Web & Mobile"],
         date: 
-            {debut: "10/2023",
-            fin: "06/2024",}
+            {debut: "Octobre 2023",
+            fin: "Juin 2024",}
         ,    
         type:"diplome",
     //etude / diplome / autre
-        description: "Bootcamp de 10 semaines focus Javascript (React & React native). Réalisation de 10 projets pendant cette formation. Expérience enrichissante et intensive mais assez courte (J'ai adoré apprendre et pratiquer de nouvelles choses).",
-        skills:["Esprit logique"],
-        lieu:"Remote",
+        description: "Bootcamp de 10 semaines focus Javascript (React & React native) mettant en avant la pratique avec la réalisation de 10 projets.",
+        softSkills:[
+            "Adaptabilité",
+            "Autonomie", 
+            "Curiosité", 
+            "Persévérance",
+           ],
+        competences:[
+            "Conception et maquettage d’une application web & mobile",
+            "Pilotage d’un projet d’application web & mobile",
+            "Concevoir, manipuler, administrer et sécuriser une base de données en lien avec une application web & mobile",
+            "Développement d’une application web & mobile",
+            "Mise en production d’une application web & mobile",
+            ],
+        lieu:"La Capsule, Remote",
         image: "string",
     },
 ]

@@ -13,7 +13,22 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: "0" },
+          '100%': { opacity: "1" },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn forwards',
+      },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [
     require('tailwind-scrollbar'),

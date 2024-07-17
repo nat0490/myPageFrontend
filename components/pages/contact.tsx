@@ -1,11 +1,10 @@
 "use client";
-import React, { useRef, useState} from "react";
+import React, { useEffect, useRef, useState} from "react";
 import { Player } from '@lottiefiles/react-lottie-player';
 import useForm  from "@/hooks/useForm";
 import emailjs from '@emailjs/browser';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faFaceSmile, faFaceSadTear } from "@fortawesome/free-solid-svg-icons";
 import { Laugh, Frown} from 'lucide-react';
+import { BeatLoader } from "react-spinners";
 
 const fields = [
     {
@@ -31,11 +30,15 @@ export function isValideEmail(str:string) {
 
 const Contact: React.FC = () => {
 
+    const [mounted, setMounted] = useState<boolean>(false); 
+//MONTAGE COMPOSANT
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const textFields = fields.filter(field => field.name === "message");
     const otherFields = fields.filter(field => field.name !== "message");
     const form = useRef<HTMLFormElement>(null);
-    // const email_pattern = "^[a-zA-Z0-9.!#$%&'*+\/=?^_`\{\|\}~\-]+@[a-zA-Z0-9\-]+(?:\\.[a-zA-Z0-9\-]+)\*$";
-    // const email_pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$";
     const email_pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
     const [ isLoading, setIsLoading ] = useState<boolean>(false);
@@ -93,9 +96,11 @@ const Contact: React.FC = () => {
     //     window.open("mailto:nathalie_sa@live.fr");
     // }
 
+    if (!mounted) return <BeatLoader color="#db2777"/>;
+
     return (
         <section className="w-11/12 mb-32">
-            <h1 className="text-pink-600 text-small-caps text-right text-5xl mb-6 ">Contact</h1>
+            <h1 className="text-pink-600 text-small-caps text-right text-5xl mb-6 mr-40 ">Contact</h1>
             <div className=" h-72 mb-10  rounded-3xl contactBox ">
                 <div className="pb-32"> 
                     <form ref={form} onSubmit={handleSubmit} className="flex justify-center w-full">

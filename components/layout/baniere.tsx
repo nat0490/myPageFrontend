@@ -4,8 +4,7 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { Github, Linkedin } from 'lucide-react';
 import { useTheme } from "next-themes";
 import {ToggleTheme} from "@/components/common";
-
-
+import { BeatLoader } from "react-spinners";
 
 
 const Baniere: React.FC = () => {
@@ -14,6 +13,12 @@ const Baniere: React.FC = () => {
 
   const [ activeAnimationLine, setActiveAnimationLine ] = useState<Number | null>(null);
   const [ activeAnimationPlace, setActiveAnimationPlace ] = useState<Number | null>(null);
+
+  const [mounted, setMounted] = useState<boolean>(false); 
+//MONTAGE COMPOSANT
+  useEffect(() => {
+      setMounted(true);
+  }, []);
 
 // ANIMATION ALEATOIRE DES CARRES
   useEffect(()=> {
@@ -82,12 +87,12 @@ const Baniere: React.FC = () => {
       return nom;
     };
 
-
+    if (!mounted) return <BeatLoader color="#db2777"/>;
 
     return (
       <div className="w-full mb-4 "> 
-        <section className="flex flex-col md:flex-row md:justify-between md:items-center w-full xl:px-32 lg:px-24 md:px-12 px-4  pt-4 lg:pt-16 pb-32 ">
-          <div className="flex mt-2 ml-2">
+        <section className="flex flex-col md:flex-row md:justify-between md:items-center w-full xl:px-32 lg:px-24 md:px-12 px-4 pt-4 lg:pt-16 ">
+          <div className="flex mt-2 ml-2 ">
             <div className="flex flex-col ">
               <div className="flex justify-center ">
                   {grosCarre(2, 1)}
@@ -102,7 +107,7 @@ const Baniere: React.FC = () => {
           </div>
           
 
-          <div className=" flex flex-col-reverse -mt-40 sm:-mt-72 md:mt-0 md:flex-col justify-center md:mr-20"> 
+          <div className=" flex flex-col-reverse -mt-40 sm:-mt-72 md:mt-0 md:flex-col justify-center md:mr-20 "> 
             
             <div id="name"className="group mr-6 p-4">
               <p className=" text-small-caps text-right  text-pink-600 text-7xl tracking-widest cursor-default ">

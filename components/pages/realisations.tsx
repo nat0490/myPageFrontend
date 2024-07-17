@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState} from "react";
 import myRealisations from "@/data/realisations";
 import Image from "next/image";
-import { PulseLoader, PacmanLoader } from 'react-spinners';
+import { BeatLoader} from 'react-spinners';
 import { Link, MousePointerClick,Cog } from 'lucide-react';
 import { useTheme } from "next-themes";
 
@@ -31,7 +31,7 @@ const Realisations: React.FC = () => {
         };
     }, [mounted]);
 
-
+//PREMIER ESSAI => DEFILEMENT D'IMAGES
     // const scrollRef = useRef<HTMLDivElement>(null);
 
     // useEffect(() => {
@@ -151,7 +151,7 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-150"
-                        // priority={i === 0}
+                        priority
                     />
                 </div>
             )
@@ -177,7 +177,7 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
             const displayText = isTruncated ? fullText.substring(0, 150) : fullText; 
 
             allRealisations.push(
-                <div key={`${realisation.id}`} className={` flex flex-col w-full md:w-1/2  ${allRealisations.length >= 3 && "xl:w-1/3"} `}>
+                <div key={`${realisation.id}`} className={` flex flex-col w-full md:shrink md:w-1/2 xl:w-1/3`}>
                     {/* ${allRealisations.length >= 3 && "xl:w-1/3"}  */}
                     <div className="rounded-xl h-full bg-pink-700/5 p-2">
                     <h2 className="text-small-caps text-center text-xl m-2 bg-pink-600/10 rounded-lg">
@@ -249,13 +249,13 @@ const handleImage = (indexRealisation: number, indexImage: number) => {
         return allRealisations;
     };
 
-    if (!mounted) return <PacmanLoader color="#db2777"/>;
+    if (!mounted) return <BeatLoader color="#db2777"/>;
 
     return (
         <section className="w-full">
             <h1 className="text-pink-600 text-small-caps text-center text-5xl mb-6 "> Réalisations </h1>
-            <div className="mb-4">
-                <div className="w-full flex flex-nowrap overflow-x-auto justify-center  space-x-3">
+            <div className="mb-4 w-full">
+                <div className="w-full flex flex-nowrap overflow-x-auto justify-center space-x-3">
 
                     {realisations()}
                     

@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { PulseLoader, PacmanLoader } from 'react-spinners';
+import { BeatLoader} from 'react-spinners';
 
 const Skills: React.FC = () => {
     const { theme, setTheme } = useTheme();
@@ -142,25 +142,25 @@ const Skills: React.FC = () => {
         for(let i:number = 0; i<allSkills.length; i++) {
             const skill = allSkills[i];
             mySkills.push(
-                <div key={`${i}`} className="flex-none flex flex-col items-center justify-center size-48">            
+                <div key={`${i}`} className="flex-none flex flex-col items-center justify-center w-24 h-32 md:size-48">            
                     <Image 
                         src={skill.src}
                         alt={skill.name}
-                        className={`size-28 hover:size-40 mb-4 ${theme === 'dark' &&  (skill.name === 'Git' || skill.name === 'GitHub' || skill.name === 'Expo' || skill.name === 'TypeScript' || skill.name === 'Express JS')? 'invert' : ''}`}
+                        className={`size-14 md:size-28 hover:size-40 md:hover:size-18 mb-4 ${theme === 'dark' &&  (skill.name === 'Git' || skill.name === 'GitHub' || skill.name === 'Expo' || skill.name === 'TypeScript' || skill.name === 'Express JS')? 'invert' : ''}`}
                         // (skill.name === 'Git' || skill.name === 'GitHub' || skill.name === 'Expo' || skill.name === 'TypeScript' || skill.name === 'Express JS')
                     />
-                    <p className="text-small-caps ">{skill.name}</p>                   
+                    <p className="text-small-caps text-center">{skill.name}</p>                   
                 </div>
             )
         }
         return mySkills;
     };  
     
-    if (!mounted) return <PacmanLoader color="#db2777"/>;
+    if (!mounted) return <BeatLoader color="#db2777"/>;
 
     return (
         <section className="w-full">
-            <h1 className="text-pink-600 text-small-caps text-5xl mb-6 ml-8"> Skills </h1>
+            <h1 className="text-pink-600 text-small-caps text-5xl mb-6 ml-40"> Skills </h1>
             <div className=" h-98 mb-4 flex items-center overflow-hidden">
                 <div className="flex flex-col w-full">
                     <div id="scrollSkills" ref={scrollContainerRef} className="flex items-center overflow-hidden">
